@@ -1,10 +1,13 @@
+'use strict';
+
 var CachingWriter = require('broccoli-caching-writer');
 var fs            = require('fs');
 var path          = require('path');
+var symlinkOrCopy = require('symlink-or-copy');
 var walkSync      = require('walk-sync');
 
-function RemoveEmptyFiles(inputNodes, options) {
-  CachingWriter.call(this, inputNodes, options);
+function RemoveEmptyFiles(inputNode, options) {
+  CachingWriter.call(this, inputNode, options);
 
   this.options = this.options || options || {};
   this.options.ignoreWhitespace = this.options.ignoreWhitespace || false;
@@ -26,7 +29,7 @@ RemoveEmptyFiles.prototype.updateCache = function(srcPaths, destDir) {
 
         if(contentBuffer && contentBuffer.length) {
           if(!ignoreWhitespace || (ignoreWhitespace && contentBuffer.toString().trim())) {
-            fs.writeFileSync(destPath, contentBuffer);
+            symlinkOrCopy.sync(fullPath, destPath);
           }
         }
       }
