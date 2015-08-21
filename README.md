@@ -2,7 +2,8 @@
 
 [![Build Status](https://travis-ci.org/zackthehuman/broccoli-empty-files.svg?branch=master)](https://travis-ci.org/zackthehuman/broccoli-empty-files)
 
-Remove empty or whitespace-only files from a tree.
+Remove empty or whitespace-only files from a tree. This plugin is also cache
+aware, so identical input trees are just symlinked between builds.
 
 ## Installation
 
