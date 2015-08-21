@@ -1,0 +1,27 @@
+{
+  "name": "broccoli-empty-files",
+  "version": "0.0.1",
+  "description": "Broccoli plugin that removes empty files",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "http://github.com/zackthehuman/broccoli-empty-files.git"
+  },
+  "keywords": [
+    "broccoli-plugin"
+  ],
+  "author": "Zack Mulgrew <zack@zackthehuman.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/zackthehuman/broccoli-empty-files/issues"
+  },
+  "homepage": "https://github.com/zackthehuman/broccoli-empty-files",
+  "devDependencies": {
+    "broccoli": "^0.16.7",
+    "broccoli-caching-writer": "^1.1.0",
+    "walk-sync": "^0.1.3"
+  }
+}
